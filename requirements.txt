@@ -1,0 +1,7 @@
+pandas
+scikit-learn
+nltk
+praw
+streamlit
+matplotlib
+joblib

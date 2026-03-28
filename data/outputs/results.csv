@@ -1,0 +1,6 @@
+text,label,confidence,alert,saved_at
+I feel empty and tired of everything,Suicidal,0.59,MEDIUM,2026-03-28 11:41:52.178004
+I am very stressed about my exams,Stress,0.97,MEDIUM,2026-03-28 11:41:52.178004
+Life is going well today,Normal,0.56,MEDIUM,2026-03-28 11:41:52.178004
+I feel anxious all the time,Anxiety,0.85,HIGH,2026-03-28 11:41:52.178004
+I don't enjoy things anymore,Personality disorder,0.45,LOW,2026-03-28 11:41:52.178004
