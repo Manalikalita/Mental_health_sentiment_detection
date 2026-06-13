@@ -21,9 +21,14 @@ class StorageManager:
         # Add timestamp column
         df["saved_at"] = datetime.now()
 
-        # If file exists → append
         if os.path.exists(self.output_path):
-            df.to_csv(self.output_path, mode='a', header=False, index=False)
+            try:
+                existing = pd.read_csv(self.output_path)
+                combined = pd.concat([existing, df], ignore_index=True, sort=False)
+                combined.to_csv(self.output_path, index=False)
+            except Exception:
+                # If existing output is corrupted, overwrite with clean results
+                df.to_csv(self.output_path, index=False)
         else:
             df.to_csv(self.output_path, index=False)
 

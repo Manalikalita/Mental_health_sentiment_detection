@@ -1,0 +1,1 @@
+# src/alert/__init__.py

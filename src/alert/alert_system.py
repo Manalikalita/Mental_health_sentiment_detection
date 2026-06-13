@@ -6,15 +6,19 @@ class AlertSystem:
 
     def generate_alert(self, label, confidence):
 
-        high_risk_labels = ["suicidal", "depression", "anxiety"]
+        suicidal_labels = {"suicidal", "suicide"}
+        medium_risk_labels = {"depression", "anxiety", "stress"}
 
         label = label.lower()
 
-        if label in high_risk_labels and confidence > self.high:
+        if label in suicidal_labels:
             return "HIGH"
 
-        elif confidence > self.medium:
-            return "MEDIUM"
-
-        else:
+        if label in medium_risk_labels:
+            if confidence >= self.high:
+                return "HIGH"
+            if confidence >= self.medium:
+                return "MEDIUM"
             return "LOW"
+
+        return "LOW"
